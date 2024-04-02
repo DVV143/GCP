@@ -1,0 +1,135 @@
+GCP learning objectives: 
+    *   Resouce hierarchy
+    *   Interaticing with GCP resources
+
+Resouces are fundamentals components of GCP .
+* GCP VM's
+* GAE Instances
+* Cloud pub/sub topics
+* cloud storage buckets
+
+1. Resources belong to project
+2. Projects may be organized into a folders
+3. Projects represent a billing unit .
+4. Folers provide logial grouping of project
+5. Folders belong one and onnly one organization
+6. An organization is tge top level entity in GCP hierarchy
+---------------------------------------------------------------------> 
+
+                                        Orgainization 
+                                        -----<>------
+                                             |
+                                    Folders       Folders 
+                                    ---<>--       --<>---
+                                        |            |
+                         projects         Projects              Projects 
+                         --------         ---------             --------
+                Resouces      Resources   Resources      Resources  Resources 
+
+
+interaticng with GCP :
+
+UI 
+CLI (cloud SDK) 
+mobile app
+Rest API 
+
+Accessing GCP cloud shell : 
+1. accessibale from any where like web broswer
+2. complete pre loaded with an IDE , gcloud SDK and other tools.
+3. Based on a GCE VM
+4. Provided 5GB of persistent disk storage
+
+$ gcloud compute list 
+
+compute services : 
+----------------> 
+*compute resources are a critical component of the cloud 
+*code is deployed and executed in one of the compute services
+*wide range of compute choices : 
+
+1. app engine : basically provides all suported environemnt for the app to be running (platform as a service)
+2. VM engine : It basically allow us to customize lot of things like os and packages need to be installed etc.
+3. kubernetes engine : it basically orchestarte the containers and deploy the application 
+4. cloud function : it basically allow functions as a service .
+
+
+----> app enginer <-------  paas (platform as a service)
+
+one of the first compute service from google cloud ( PaaS)
+fully managed platform for deploy web apps and scale automatically .
+supports multiple languages like , java , python , php  . Frameworks and libraries 
+
+--> app engine comes in two environments : 
+   + standerd 
+   + Flexible 
+
+Standerd : we will have a sand box which is pre-defined 
+Flexible : we get container so we can customize 
+
+-----------------------<>---------------------------------------------------------------------------------------------
+Google compute engine : iaas (infra as a service)
+
+1. Google compute engine ( GCE) enables linux and windows VM's to run on google's globla infrastructure 
+2. VM's are based on machine types with varied cpu and ram configuration
+3, persistence is available through standerd and ssd disks
+4. VM's are changed minimum of 1 minute and in 1 seconds increment after that 
+5. Sustained used discounts are offered for running VM's for a significant portion of the billing month 
+6. committed use discounts are offered for purchases based or 1 year or 3 year contract .
+
+------------------------------<>----------------------------------------------------------------------------------------
+google kubernetes engine : containers as a service 
+1. GKE is managed kubernetes engine where we can deploy our application managed by GKE.
+2. Kubernetes have a control plane (master) and worker node (nodes)
+3. Google provsions worker nodes as GCE VM's.
+4. node pools enabled mixing and matchig different vm configurations
+5. The service is tightly intergrateed with GCP resources such as networking storage and monitoring .
+6. GKE delivers autoscaling , auto upgrades and wuto repairs of nodes and some of unique features of GKE.
+
+---------------------------<>---------------------------------------------------------------------------------------------
+google cloud functions:
+1. cloud Functions is a serverless execution environment for building and connecting cloud services 
+2. Serverless compute environemnts execute code in response to an event .
+3. cloud functions supports javascript , python3 and go 
+4. GCP events fire cloud functions through a tigger.
+4. An example like : when we upload an image in storage buck and it should fire the cloud function by converting image to an thumbnail -- > here 
+uploading an image is an event ,which tigger the function to convert image to thumbnail .
+5. triggers connects the event to the function . (faas)  functions as a service 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+----------------------------------- CLOUD STORAGE SERVICES-------------------------------------------------------------------
+1. cloud storage 
+2. persistent disks
+3. cloud filestore
+use cases of storgae services .
+------------------------------------------------
+* Storage services add persistence and surability to application
+* Storgae services are classified into three types :
+1. block storage
+2. Object storage
+3. File storage
+
+------> GCP storage services can be used to store : 
+ un structured data -- iamges , pdf's etc 
+ folders and files  -- on prime data , structured format 
+
+ --------->  Google cloud storage : (object storage)
+ 1. Unified object storage for a variety of applications
+ 2. Applications can store and retrieve objects through single API
+ 3. GCS can scale to exabytes of data 
+ 4. GCS is having high availablity of 99.9%
+ 5. GCS is used to store and access high frequency data and low frequency access.
+ 6. data in cloud storage will be written or re-trived using api's thats the main difference between object storage and file storage.
+ 7. data can be stored within single region or mutli region , depending on policy compliance or regulatory we use .
+
+ ------- Storage classes : 
+ High frequency access   -- Standerd (most commonly used by dev for reduced latency)
+ Low frequeny access     -- nearline (very less used data , mostly used to access once in a month) 
+ coldline                -- lowest frequecny access ( meant for data accessed least frequently, once a year) backups or achives 
+
+ ---------> persistent disks: (block storage)
+ 1. pd (persistent disks) are reliable block storage for GCE VM's
+ 2. disks are independent of compute engine vm's
+ 3. each disks are upto 64 TB.
+ 4. PD can have one writer and multiple reader.
+ 
