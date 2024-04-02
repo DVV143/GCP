@@ -132,4 +132,52 @@ use cases of storgae services .
  2. disks are independent of compute engine vm's
  3. each disks are upto 64 TB.
  4. PD can have one writer and multiple reader.
- 
+ 5. supports for both SSD and HDD ( ssd is solid disk drive , HDD hard drive )
+ 6. SSD offers best throughput for i/o intensive applications.
+ 7. PD available in 3 storage types :
+    * Zonal
+    * Regional
+    * Local 
+ ----------------------------------> Cloud filestore : 
+ Google Cloud file store :
+ 1. managed file storge service for applications.
+ 2. delivers nas (netework attached storage) as shared file system
+ 3. centralized and high avialblity filesystem for gce and GKE
+ 4. filestore files share are available as mount points in GCE VM's
+ 5. on-prime applications using nas take advantage of filestore
+ 6. data is always encrypted while in transit .
+ ------------------------------------> Network services :
+
+1. over view of network services.
+2. Network tiers.
+3. Cloud load balancing.
+4. VPC.
+5. Hybrid connectivity
+6. use cases of network services
+
+1. network services are one of the key building blocks of cloud
+2. GCP leverages google's global network connectivity 
+3. Customers can choose between standard and premium tiers.
+4. Load balancers distriubte the load evenly to multiple endpoints.
+5. VPC can offers private and hybrid networking
+6. Customers can extend their data centers to GCP through hybrid connectivity.
+
+-------------------------------------------> network service tiers:
+two service tiers:
+1. premium tiers  --> used google oremium backbone where n/w routed through google
+2. standard tiers --> n/w routed through 3rd party services like ISP's
+google by default used premium tier.
+
+--------------------------------------------> google load balancers:
+two types of load balancers :
+https load balancers -- can distibute load to any instance deployed in the world
+network load balancers  -- they are regional TCP and UDP traffic .
+both the above types can be used or configured as internal and external.
+
+---------------------------------------------> VPC ( virtual private cloud )
+VPC is a software defined network providing private networking for VM's
+VPC network is global resource with regional subnets.
+each vpc is isolated from each other logically.
+firewall rules allow or restrict traffic within subnets.
+resources within vpc communicate via ipv4 address
+vpc n/w can be connected to other vpc networks through vpc peering.
