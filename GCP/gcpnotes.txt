@@ -73,7 +73,7 @@ Google compute engine : iaas (infra as a service)
 1. Google compute engine ( GCE) enables linux and windows VM's to run on google's globla infrastructure 
 2. VM's are based on machine types with varied cpu and ram configuration
 3, persistence is available through standerd and ssd disks
-4. VM's are changed minimum of 1 minute and in 1 seconds increment after that 
+4. VM's are charged minimum of 1 minute and in 1 seconds increment after that 
 5. Sustained used discounts are offered for running VM's for a significant portion of the billing month 
 6. committed use discounts are offered for purchases based or 1 year or 3 year contract .
 
@@ -83,8 +83,8 @@ google kubernetes engine : containers as a service
 2. Kubernetes have a control plane (master) and worker node (nodes)
 3. Google provsions worker nodes as GCE VM's.
 4. node pools enabled mixing and matchig different vm configurations
-5. The service is tightly intergrateed with GCP resources such as networking storage and monitoring .
-6. GKE delivers autoscaling , auto upgrades and wuto repairs of nodes and some of unique features of GKE.
+5. The service is tightly intergrated with GCP resources such as networking storage and monitoring .
+6. GKE delivers autoscaling , auto upgrades and auto repairs of nodes and some of unique features of GKE.
 
 ---------------------------<>---------------------------------------------------------------------------------------------
 google cloud functions:
